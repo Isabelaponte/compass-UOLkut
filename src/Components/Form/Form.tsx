@@ -1,5 +1,5 @@
 import classes from './Form.module.css';
-import orkut from '../../assets/ps_orkut.png';
+import orkut from '../../assets/ps_orkut.svg';
 import { Props } from '../../pages/Login/LoginPage';
 import { useNavigate } from 'react-router-dom';
 
@@ -84,7 +84,7 @@ const Form = (props:Props) => {
         <div className={classes['container-form']}>
                 <div className={classes['brand-form']}>
                     <img src={orkut} className={classes['img-orkut']} alt='Brand Orkut' />
-                    <h3 className={classes.title}>Acesse o Orkut</h3>
+                    <h3 className={classes.title}>Acesse o UOLkut</h3>
                 </div>
                 <form className={classes.form} onSubmit={submitHandler}>
                 <div className={classes['input-container']}>
@@ -121,7 +121,7 @@ const Form = (props:Props) => {
                     <div className={classes['flex-button']}>
                         <button className={classes['btn-signin']} >
                             <span className={classes['signin-description']}>
-                                Entrar na conta
+                                Entrar
                             </span>
                         </button>
                         <button className={classes['btn-signup']} onClick={() => props.onFormSwitch('register')}>

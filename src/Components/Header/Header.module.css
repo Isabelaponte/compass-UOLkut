@@ -1,51 +1,52 @@
 .header {
-    height: 92px;
-    background-color: #FDFEFF;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1;
+  height: 92px;
+  background-color: var(--bg-cards);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1;
 }
 
 .brand {
-    width: 107px;
-    height: 32px;
-    margin-top: 29px;
-    margin-left: 230px;
+  color: var(--primary);
+  font-weight: 800;
+  font-size: 36px;
+  margin-top: 24px;
+  margin-left: 230px;
 }
 
 .flex {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .flex-information {
-    display: flex;
-    margin-right: 130px;
+  display: flex;
+  margin-right: 230px;
 }
 
 .information {
-    margin-top: 34px;
-    color: #4B4B4B;    
-    width: 157px;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0px;
-    text-align: left;
+  margin-top: 24px;
+  color: #4B4B4B;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
 }
 
 /* Criação da animação de diminuição */
 @keyframes shrinkBrand {
   to {
-    margin-left: 0px; /* Ajuste o valor para a posição final desejada */
+    margin-left: 0px;
+    /* Ajuste o valor para a posição final desejada */
   }
 }
 
 @media screen and (max-width: 768px) {
   .brand {
-    animation: shrinkBrand 1.5s ease-in-out forwards; /* Utilizamos 'forwards' para manter a posição final */
+    animation: shrinkBrand 1.5s ease-in-out forwards;
+    /* Utilizamos 'forwards' para manter a posição final */
   }
 
   .flex-information {

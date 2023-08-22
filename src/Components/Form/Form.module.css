@@ -13,8 +13,7 @@
 
 .container-form {
     display: flex;
-    background-color: #FDFEFF;
-    /* padding: 1.5rem; */
+    background-color: var(--bg-cards);
     height: 488px;
     border-radius: 1rem;
     align-items: center;
@@ -23,9 +22,9 @@
     width: 384px;
 }
 
-h3 {
+.title {
     font-size: 24px;
-    color: #ED2590;
+    color: var(--primary);
 }
 
 .flex-button {
@@ -40,22 +39,30 @@ h3 {
 button {
     padding: 1rem;
     border-radius: 0.5rem;
-    background-color: #ED2590;
-    color: #FFF;
     font-size: 18px;
     border-style: none;
     width: 100%;
     margin-top: 1rem;
 }
 
+.btn-signin {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-signin:hover {
+    background-color: var(--hover-primary);
+    color: white;
+}
+
 .btn-signup {
-    background-color: #EFF3F8;
-    color:#ED2590;
+    background-color: var(--input);
+    color:var(--primary);
     margin-top: 0;
 }
 
 .btn-signup:hover{
-    background-color: #dcdcdc;
+    background-color: var(--hover-input);
     transition: 0.5s;
 }
 
@@ -67,7 +74,7 @@ button {
     font-size: 16px;
     border-style: none;
     border-radius: 8px;
-    background-color: #EFF3F8;
+    background-color: var(--input);
 }
 
 
@@ -128,7 +135,7 @@ input::-webkit-input-placeholder{
 }
 
 .checkbox input:checked ~ .checkmarkPassword {
-  background-color: #ED2590;
+  background-color: var(--primary);
 }
 
 .password-flex {
@@ -140,7 +147,7 @@ input::-webkit-input-placeholder{
 }
 
 .anchor-password {
-    color: #ED2590;
+    color: var(--primary);
     margin-top: 22px;
 }
 
