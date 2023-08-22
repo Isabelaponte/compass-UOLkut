@@ -1,0 +1,31 @@
+.bubble {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    max-width: 100%;
+}
+
+.chip {
+    background-color: #EFF3F8;
+    color: #4b4b4b;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    border: none;
+    outline: none;
+}
+
+.chip:hover {
+    background: #8c8f93c9;
+    transition: background ease-in .5s;
+}
+
+.close {
+    color: #e56969;
+    margin-block-start: 3px;
+    padding-inline-start: 0.3vw;
+    font-size: 8px;
+    cursor: pointer;
+}

@@ -1,0 +1,7 @@
+.divHomePage {
+    display: flex;
+    width: 100vw;
+    height: 100vw;
+    background-color: red;
+    margin-top: 100px;
+}

@@ -1,0 +1,87 @@
+.img-orkut {
+    height: 32px;
+    width: 32px;
+}
+
+.brand-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.container-form {
+    display: flex;
+    background-color: #FDFEFF;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+h3 {
+    font-size: 24px;
+    color: #ED2590;
+}
+
+.flex-button {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+button {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #ED2590;
+    color: #FFF;
+    font-size: 18px;
+    border-style: none;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.btn-login {
+    background-color: #EFF3F8;
+    color:#ED2590;
+    margin-top: 0;
+}
+
+.btn-login:hover{
+    background-color: #dcdcdc;
+    transition: 0.5s;
+}
+
+input {
+    padding: 0.5rem;
+    height: 21px;
+    margin-top: 1rem;
+    width: 21rem;
+    font-size: 16px;
+    border-style: none;
+    border-radius: 8px;
+    background-color: #EFF3F8;
+}
+
+
+input::-webkit-input-placeholder{
+    color: #868686;
+    font-size: 16px;
+}
+
+.invalid-input {
+    border-style:solid;
+    border-color: red;
+}
+.errors {
+    padding-top: 0.5rem;
+    color: red;
+}
+
+.invalid-input:focus {
+    box-shadow: none;
+}

@@ -1,0 +1,86 @@
+.__divProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 324px;
+  top: 172px;
+  border-radius: 16px;
+  background-color: white;
+}
+
+.__divProfilePhoto {
+  width: 184px;
+  height: 184px;
+  border: 5px solid #ed2590;
+  background-color: transparent;
+  border-radius: 50%;
+  margin-top: 20px;
+  background-image: url(../../assets/iuri.jpeg);
+  background-size: cover;
+}
+
+.__divProfile h4 {
+  margin-top: 20px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 15px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.__div-profile h5 {
+  margin-top: 15px;
+  font-family: SF Pro Display;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 15px;
+  letter-spacing: 0px;
+  text-align: left;
+}
+
+.divProfile {
+  display: flex;
+  width: 280px;
+  height: 56px;
+  top: 528px;
+  left: 352px;
+  border-radius: 16px;
+  align-items: center;
+  background-color: white;
+  justify-content: center;
+  margin-left: 50px;
+  margin-top: 20px;
+}
+
+@media (max-width: 360px) {
+  .__divProfile {
+    width: 320px;
+    height: 260px;
+    top: 160px;
+    left: 20px;
+    border-radius: 16px;
+  }
+
+  .__divProfilePhoto {
+    width: 124px;
+    height: 124px;
+    top: 184px;
+    left: 118px;
+    border-radius: 100px;
+    border: 3px solid #ed2590;
+  }
+
+  .__divProfile h4 {
+    font-size: 18px;
+    font-weight: 500;
+    margin-top: 20px;
+  }
+
+  .__divProfile h5 {
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 0px;
+  }
+}

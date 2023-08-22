@@ -1,0 +1,185 @@
+.img-orkut {
+    height: 32px;
+    width: 32px;
+}
+
+.brand-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.container-form {
+    display: flex;
+    background-color: #FDFEFF;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* min-height: ; adicionar um minimo para os steps*/
+}
+
+h3 {
+    font-size: 24px;
+    color: #ED2590;
+}
+
+.flex-button {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+button {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: #ED2590;
+    color: #FFF;
+    font-size: 18px;
+    border-style: none;
+    width: 100%;
+    margin-top: 1rem;
+    transition: 0.5s;
+}
+
+button:hover{
+    background-color: #fe7cc2;
+    transition: 0.5s;
+}
+
+.btn-login {
+    background-color: #EFF3F8;
+    color: #ED2590;
+    margin-top: 0;
+}
+
+.btn-login:hover{
+    background-color: #dcdcdc;
+    transition: 0.5s;
+}
+
+input,
+select {
+    /* padding: 0.5rem; */
+    height: 2rem;
+    margin-top: 1rem;
+    width: 21rem;
+    font-size: 16px;
+    border-style: none;
+    border-radius: 8px;
+    background-color: #EFF3F8;
+}
+
+
+input::-webkit-input-placeholder {
+    color: #868686;
+    font-size: 16px;
+}
+
+select {
+    width: 100%;
+    color: #868686;
+}
+
+select:hover,
+select:focus,
+select:active,
+select:checked {
+    color: #000;
+}
+
+select option {
+    color: #000;
+}
+
+option[value=""][disabled] {
+    display: none;
+}
+
+.children {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.radio {
+    height: 1rem;
+    margin-top: 0;
+}
+
+.section {
+    display: flex;
+    flex-direction: row;
+    width: 10rem;
+    margin-top: 1rem;
+}
+
+input[type='radio']:checked{
+    accent-color: #ED2590;
+}
+
+input[type='file']::file-selector-button {
+    border: 2px solid #868686;
+    padding: 0.2em 0.4em;
+    border-radius: 0.2em;
+    background-color: #EFF3F8;
+    transition: 1s;
+
+}
+
+input[type='file'] {
+    background-color: transparent;
+}
+
+input[type='file'] {
+    /* background-color: transparent; */
+    display: none
+}
+
+.picture {
+    background-color: #ED2590;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 6px 20px;
+    transition: 0.5s;
+    width: 57%;
+
+}
+
+.picture:hover {
+    transition: 0.5s;
+    background-color: #fe7cc2;
+}
+
+.sectionPicture {
+    display: flex;
+    flex-direction: row;
+    /* width: 10rem; */
+    margin-top: 1rem;
+    align-items: center;
+}
+
+.anchor-password {
+    color: #ED2590;
+    margin-top: 22px;
+}
+
+.invalid-input {
+    border-style:solid;
+    border-color: red;
+}
+.errors {
+    padding-top: 0.5rem;
+    color: red;
+}
+
+.invalid-input:focus {
+    box-shadow: none;
+}
