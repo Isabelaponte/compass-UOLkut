@@ -18,8 +18,10 @@
 body {
   background-color: var(--background);
   font-family: RobotoFlex;
-  align-items: center;
-  justify-content: center;
+  /* padding-top: 94px;
+  padding-bottom: 50px; */
+  /* align-items: center;
+  justify-content: center; */
 }
 
 

@@ -2,12 +2,23 @@
     display:flex;
     justify-content: center;
     align-items: center;
-    padding-top: 6.5rem;
-    padding-top: 7.5rem;
+    height: 100vh;
+    /* padding-top: 6.5rem;
+    padding-top: 7.5rem; */
+    /* padding-top: 94px;
+    padding-bottom: 50px; */
+    /* margin-top: 94px;
+    margin-bottom: 50px; */
 }
 
 @media screen and (max-width: 360px) {
     .container {
         padding-top: 6.5rem;
+    }
+}
+
+@media screen and (max-height: 612px) {
+    .container{
+      padding-bottom: none;
     }
 }

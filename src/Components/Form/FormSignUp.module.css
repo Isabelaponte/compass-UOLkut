@@ -1,4 +1,3 @@
-
 .container-form {
     background-color: var(--bg-cards);
     height: 598px;
@@ -9,6 +8,7 @@
     flex-direction: column;
     border-radius: 1rem;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    position: inherit;
 }
 
 .brand-form {
@@ -41,7 +41,7 @@
     margin-top: 1.5rem;
 }
 
-.label-float { 
+.label-float {
     display: flex;
     width: 100%;
     gap: 1rem;
@@ -66,7 +66,7 @@
     border-radius: 8px;
     margin-top: 1.5rem;
 }
- 
+
 .invalid-input {
     background-color: var(--input);
     min-width: 336px;
@@ -88,10 +88,10 @@
 .btn-signin {
     background-color: var(--primary);
     color: white;
-    transition:1s;
+    transition: 1s;
 }
 
 .btn-signin:hover {
     background-color: var(--hover-primary);
-    transition:1s;
+    transition: 1s;
 }
