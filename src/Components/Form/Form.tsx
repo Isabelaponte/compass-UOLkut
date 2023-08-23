@@ -91,11 +91,11 @@ const Form = (props:Props) => {
                         <div className={classes['label-float']}>
                             <input onChange={handleChange} name='email'
                                 value={form.email} className={errors.invalidEmail ? classes['invalid-input'] : classes.input} 
-                                type="text" placeholder="E-mail"/>
+                                type="text" placeholder="E-mail" required />
                         </div>
-                        {errors.invalidEmail &&
+                        {/* {errors.invalidEmail &&
                             <p className={classes.errors}>Campo de email não pode estar vazio</p>
-                        }
+                        } */}
                         {errors.invalidFormatEmail &&
                             <p className={classes.errors}>Campo de email não é válido</p>
                         }
@@ -104,7 +104,7 @@ const Form = (props:Props) => {
                         <div className={classes['label-float']}>
                             <input onChange={handleChange} name='password' 
                                 value={form.password} className={errors.invalidPassword ? classes['invalid-input'] : classes.input}
-                                 type="password" placeholder="Senha"/>
+                                 type="password" placeholder="Senha" required/>
                         </div>
                         {errors.invalidPassword &&
                             <p className={classes.errors}>Campo de senha não pode estar vazio</p>
