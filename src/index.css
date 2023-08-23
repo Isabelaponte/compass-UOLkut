@@ -6,13 +6,13 @@
   --input: #eff3f8;
   --hover-input: #dcdcdc;
   --bg-cards: #FDFEFF;
-
 }
 
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: RobotoFlex;
 }
 
 body {
@@ -25,11 +25,6 @@ body {
 
 button {
   cursor: pointer;
-}
-
-@font-face {
-  font-family: SFProDisplay;
-  src: url(./fonts/SFPRODISPLAYREGULAR.OTF);
 }
 
 @font-face {
