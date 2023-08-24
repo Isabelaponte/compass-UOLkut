@@ -1,10 +1,10 @@
-import FriendsSection from "../../components/Friends/FriendsSection";
-import HomeHeader from "../../components/Header/HomeHeader";
-import ProfilePhoto from "../../components/Profile/ProfilePhoto";
-import EditProfile from "../../components/EditProfile/EditProfile";
-import ProfileDetails from "../../components/ProfileDetails/ProfileDetails";
-import CommunitySection from "../../components/Community/CommunitySection";
-import SearchBar from "../../components/Home/SearchBar";
+import FriendsSection from "../../Components/Friends/FriendsSection";
+import HomeHeader from "../../Components/Header/HomeHeader";
+import ProfilePhoto from "../../Components/Profile/ProfilePhoto";
+import EditProfile from "../../Components/EditProfile/EditProfile";
+import ProfileDetails from "../../Components/ProfileDetails/ProfileDetails";
+import CommunitySection from "../../Components/Community/CommunitySection";
+import SearchBar from "../../Components/Home/SearchBar";
 
 const Home = () => {
   return (

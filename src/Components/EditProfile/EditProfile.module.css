@@ -1,5 +1,5 @@
 a {
-  color: #ed2590;
+  color: var(--primary);
   text-decoration: none;
 }
 

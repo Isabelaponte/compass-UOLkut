@@ -1,6 +1,5 @@
 import classes from "./HomeHeader.module.css";
 
-import orkLogo from "../../assets/logo-orkut.svg";
 import magGlass from "../../assets/MagnifyingGlass.svg";
 import userImg from "../../assets/iuri.jpeg";
 import arrowDown from "../../assets/CaretDown.svg";
@@ -11,12 +10,12 @@ const HomeHeader = () => {
       <nav className={classes.nav}>
         <ul className={classes.navList}>
           <li>
-            <a href="/">
-              <img src={orkLogo} className={classes.logo} />
+            <a href="/profile">
+              <p className={classes.logo} >UOLkut</p>
             </a>
           </li>
           <li className={classes.navChild}>
-            <a href="/" className={classes.link}>
+            <a href="/profile" className={classes.link}>
               Início
             </a>
           </li>
@@ -26,37 +25,40 @@ const HomeHeader = () => {
             </a>
           </li>
           <li className={classes.navChild}>
-            <a href="/" className={classes.link}>
+            <a href="/profile" className={classes.link}>
               Comunidade
             </a>
           </li>
           <li className={classes.navChild}>
-            <a href="/" className={classes.link}>
+            <a href="/profile" className={classes.link}>
               Jogos
             </a>
           </li>
         </ul>
-
+        <div className={classes.coiso}>
         <form className={classes.searchForm}>
           <img src={magGlass} />
           <input
             type="text"
-            placeholder="Pesquisar no Orkut"
+            placeholder="Pesquisar no UOLkut"
             className={classes.searchInput}
           />
         </form>
+        </div>
+
       
         <ul className={classes.user}>
           <li>
             <img src={userImg} className={classes.userImg} />
           </li>
           <li>
-            <a href="/" className={classes.link}>
+            <a href="/profile" className={classes.link}>
               <p>Iuri Silva</p>
             </a>
           </li>
           <li>
-            <a href="/" className={classes.link}>
+            
+            <a href="/profile" className={classes.link}>
               <img src={arrowDown} className={classes.caret} />
             </a>
           </li>

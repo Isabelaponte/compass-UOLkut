@@ -12,7 +12,7 @@
 .__divProfilePhoto {
   width: 184px;
   height: 184px;
-  border: 5px solid #ed2590;
+  border: 5px solid var(--primary);
   background-color: transparent;
   border-radius: 50%;
   margin-top: 20px;
@@ -69,7 +69,7 @@
     top: 184px;
     left: 118px;
     border-radius: 100px;
-    border: 3px solid #ed2590;
+    border: 3px solid var(--primary);
   }
 
   .__divProfile h4 {

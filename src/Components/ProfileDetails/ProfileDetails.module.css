@@ -110,14 +110,14 @@
 .word {
   display: inline-block;
   padding: 5px 10px;
-  border: 1px solid #ed2590;
+  border: 1px solid var(--primary);
   color: #4b4b4b;
   border-radius: 20px;
   margin-left: 10px;
 }
 
 .verTodos {
-  color: #ed2590;
+  color: var(--primary);
   margin-left: 20px;
   cursor: pointer;
 }
