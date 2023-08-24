@@ -6,14 +6,16 @@ import ProfileDetails from "../../Components/ProfileDetails/ProfileDetails";
 import CommunitySection from "../../Components/Community/CommunitySection";
 import SearchBar from "../../Components/Home/SearchBar";
 
+import classes from "./HomePage.module.css";
+
 const Home = () => {
   return (
     <>
       <HomeHeader />
       <SearchBar />
 
-      <div className="content">
-        <div className="profile">
+      <div className={classes.content}>
+        <div className={classes.profile}>
           <ProfilePhoto />
           <EditProfile />
         </div>

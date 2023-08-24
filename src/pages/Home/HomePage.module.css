@@ -1,7 +1,22 @@
-.divHomePage {
+/* .divHomePage {
     display: flex;
     width: 100vw;
     height: 100vw;
     background-color: red;
     margin-top: 100px;
+} */
+
+.content {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    padding: 5rem;
+    gap: 2rem;
+    /* width: 592px; */
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 }
