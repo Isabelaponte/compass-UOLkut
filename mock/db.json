@@ -1,0 +1,30 @@
+{
+  "profiles": [
+    {
+      "id": 1,
+      "name": "Leonarda",
+      "email": "leonarda@gmail.com",
+      "password": "leonarda1580",
+      "birth_date": "12/02/2004",
+      "profession": "Programadora",
+      "country": "Brasil",
+      "city": "São Carlos",
+      "relationship_status": "Solteiro(a)",
+      "songs": [],
+      "movies": []
+    },
+    {
+      "id": 2,
+      "name": "Jeremias",
+      "email": "jeremias@gmail.com",
+      "password": "Jeremias1580",
+      "birth_date": "23/08/1998",
+      "profession": "Advogado",
+      "country": "Brasil",
+      "city": "Araraquara",
+      "relationship_status": "Casado(a)",
+      "songs": [],
+      "movies": []
+    }
+  ]
+}

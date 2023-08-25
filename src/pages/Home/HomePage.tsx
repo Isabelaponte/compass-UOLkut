@@ -7,8 +7,19 @@ import CommunitySection from "../../Components/Community/CommunitySection";
 import SearchBar from "../../Components/Home/SearchBar";
 
 import classes from "./HomePage.module.css";
+import api from "../../service/api";
+import {useEffect} from "react";
 
 const Home = () => {
+
+  async function getProfileById(id: number) {
+    const profile = await api.get(`/profiles/${id}`);
+    console.log(profile.data);
+    return profile.data;
+  }
+
+  useEffect(() => {getProfileById(2)}, [])
+
   return (
     <>
       <HomeHeader />
