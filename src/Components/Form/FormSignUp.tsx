@@ -2,8 +2,20 @@ import classes from "./FormSignUp.module.css";
 import orkut from "../../assets/ps_orkut.svg";
 import { useState } from "react";
 
-export const FormSignUp = () => {
 
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { auth } from "../../service/firebase";
+import { Props } from "../../pages/Login/LoginPage";
+
+
+export const FormSignUp = (props:Props) => {
+
+  const [
+    createUserWithEmailAndPassword, 
+    userInfo, 
+    loading, 
+    error] 
+    = useCreateUserWithEmailAndPassword(auth);
 
   const [form, setForm] = useState({
     email: "",
@@ -70,7 +82,22 @@ export const FormSignUp = () => {
       });
       return;
     }
+
+    createUserWithEmailAndPassword(form.email, form.password);
+    // props.onFormSwitch('login')
   };
+
+
+    if (loading) {
+      return <p>Carregando...</p>
+    }
+    if (error) {
+      return <p>Error...</p>
+    }
+    if (userInfo) {
+      console.log(userInfo.user.email)
+    }
+
 
   return (
     <>
@@ -101,9 +128,6 @@ export const FormSignUp = () => {
                   required
                 />
               </div>
-              {/* {errors.invalidEmail &&
-                            <p className={classes.errors}>Campo de email não pode estar vazio</p>
-                        } */}
               {errors.invalidFormatEmail && (
                 <p className={classes.errors}>Campo de email não é válido</p>
               )}
@@ -184,17 +208,12 @@ export const FormSignUp = () => {
             </div>
 
             <div className={classes["flex-button"]}>
-              <button className={classes["btn-signin"]}>
+              <button className={classes["btn-signin"]} >
                 <span className={classes["signin-description"]}>
                   Criar conta
                 </span>
               </button>
-              {/* <button className={classes['btn-signup']} onClick={() => props.onFormSwitch('register')}>
-                            <span className={classes['signup-description']}>
-                                Criar uma conta
-                            </span>
-                        </button> */}
-              {/* <a className={classes['anchor-password']} href='/'>Esqueci minha senha</a> */}
+
             </div>
           </form>
         </div>

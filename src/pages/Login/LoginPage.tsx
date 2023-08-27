@@ -24,7 +24,7 @@ const Login = () => {
       <Header />
       <Container>
         <Card />
-        {currentForm === "login" ? <Form onFormSwitch={toggleForm} /> : <FormSignUp/>}
+        {currentForm === "login" ? <Form onFormSwitch={toggleForm} /> : <FormSignUp onFormSwitch={toggleForm} />}
       </Container>
       <Footer />
     </>

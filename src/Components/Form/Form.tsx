@@ -1,14 +1,17 @@
 import classes from "./Form.module.css";
 import orkut from "../../assets/ps_orkut.svg";
 import { Props } from "../../pages/Login/LoginPage";
-import {useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import React, { useState } from "react";
 
 import { GoogleAuthProvider, signInWithPopup, User } from "firebase/auth";
 import { auth } from "../../service/firebase";
 
-// import { useCreateUserWithEmailAndPassword } 
+// import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+
+
 
 // import api from "../../service/api";
 
@@ -16,6 +19,13 @@ import { auth } from "../../service/firebase";
 
 const Form = (props: Props) => {
   const navigate = useNavigate();
+
+  const [
+    signInWithEmailAndPassword,
+    userInfo,
+    loading,
+    error,
+  ] = useSignInWithEmailAndPassword(auth);
 
   const [form, setForm] = useState({
     email: "",
@@ -83,11 +93,43 @@ const Form = (props: Props) => {
       return;
     }
 
-    navigate("/profile");
-    
+    // navigate("/profile");
+      signInWithEmailAndPassword(form.email, form.password);
+      console.log();
   };
 
   const [user, setUser] = useState<User>({} as User);
+
+    // const [email, setEmail] = useState("");
+    // // const [password, setPassword] = useState("");
+    // const [
+    //   createUserWithEmailAndPassword, 
+    //   user, 
+    //   loading, 
+    //   error] 
+    //   = useCreateUserWithEmailAndPassword(auth);
+
+    // function handleSignIn() {
+    //   createUserWithEmailAndPassword(form.email, form.password);
+    // }
+
+    // if (loading) {
+    //   return <p>Carregando...</p>
+    // }
+
+
+    if (loading) {
+      return <p>Carregando...</p>
+    }
+
+    if (error) {
+      return <p>Error: {error.message}</p>
+    }
+
+    if (userInfo) {
+      console.log(userInfo.user)
+    }
+  
 
   function handleGoogleSignIn() {
     const provider = new GoogleAuthProvider();
@@ -103,8 +145,6 @@ const Form = (props: Props) => {
         console.log(error);
       });
   }
-
-
 
   return (
     <>
@@ -173,11 +213,16 @@ const Form = (props: Props) => {
             </label>
           </div>
           <div className={classes["flex-button"]}>
-            <button className={classes["btn-signin"]}>
+            <button className={classes["btn-signin"]} >
               <span className={classes["signin-description"]}>Entrar</span>
             </button>
-            <button className={classes["btn-signup"]} onClick={handleGoogleSignIn}>
-              <span className={classes["signin-description"]}>Entrar com Google</span>
+            <button
+              className={classes["btn-signup"]}
+              onClick={handleGoogleSignIn}
+            >
+              <span className={classes["signin-description"]}>
+                Entrar com Google
+              </span>
             </button>
             <button
               className={classes["btn-signup"]}
