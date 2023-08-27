@@ -5,6 +5,15 @@ import {useNavigate } from "react-router-dom";
 
 import React, { useState } from "react";
 
+import { GoogleAuthProvider, signInWithPopup, User } from "firebase/auth";
+import { auth } from "../../service/firebase";
+
+// import { useCreateUserWithEmailAndPassword } 
+
+// import api from "../../service/api";
+
+// import Cookies from "js-cookie";
+
 const Form = (props: Props) => {
   const navigate = useNavigate();
 
@@ -78,8 +87,32 @@ const Form = (props: Props) => {
     
   };
 
+  const [user, setUser] = useState<User>({} as User);
+
+  function handleGoogleSignIn() {
+    const provider = new GoogleAuthProvider();
+
+    signInWithPopup(auth, provider)
+      .then(async (result) => {
+        setUser(result.user);
+        // const token = await result.user.getIdToken();
+        // Cookies.set('token', token);
+        navigate("/profile");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+
+
   return (
     <>
+      <div>
+        {user.photoURL && <img src={user.photoURL} alt="Foto Usuario" />}
+        <strong>{user.displayName}</strong>
+        <small>{user.email}</small>
+      </div>
       <div className={classes["container-form"]}>
         <div className={classes["brand-form"]}>
           <img src={orkut} className={classes["img-orkut"]} alt="Brand Orkut" />
@@ -142,6 +175,9 @@ const Form = (props: Props) => {
           <div className={classes["flex-button"]}>
             <button className={classes["btn-signin"]}>
               <span className={classes["signin-description"]}>Entrar</span>
+            </button>
+            <button className={classes["btn-signup"]} onClick={handleGoogleSignIn}>
+              <span className={classes["signin-description"]}>Entrar com Google</span>
             </button>
             <button
               className={classes["btn-signup"]}
