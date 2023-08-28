@@ -32,7 +32,7 @@ const Form = (props: Props) => {
       // const decodedToken = jwtDecode(token);
       setLogedIn(true);
     }
-
+    
   }, [])
 
 

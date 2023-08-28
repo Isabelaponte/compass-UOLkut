@@ -1,22 +1,55 @@
-/* .divHomePage {
-    display: flex;
-    width: 100vw;
-    height: 100vw;
-    background-color: red;
-    margin-top: 100px;
-} */
 
 .content {
     display: flex;
-    /* align-items: center; */
     justify-content: center;
     padding: 5rem;
     gap: 2rem;
-    /* width: 592px; */
 }
 
 .profile {
     display: flex;
     flex-direction: column;
     gap: 32px;
+}
+
+.loginErrorContainer {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+}
+
+.loginError {
+    padding: 2rem;
+    border-radius: 18px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgError {
+    width: 500px;
+    height: 500px;
+}
+
+.pError {
+    font-size: 30px;
+    text-align: center;
+}
+
+.errorButton {
+    width: 90%;
+    background-color: var(--primary);
+    color: white;
+    transition: 0.5s;
+    margin: 3rem;
+}
+
+.errorButton:hover {
+    background-color: var(--hover-primary);
+    transition: 0.5s;
+
 }

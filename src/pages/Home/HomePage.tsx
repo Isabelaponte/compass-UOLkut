@@ -6,14 +6,24 @@ import ProfileDetails from "../../Components/ProfileDetails/ProfileDetails";
 import CommunitySection from "../../Components/Community/CommunitySection";
 import SearchBar from "../../Components/Home/SearchBar";
 
+
+
+import img_notFound from '../../assets/not_found.jpg'
+
 import classes from "./HomePage.module.css";
+
 import api from "../../service/api";
 import { useEffect, useState } from "react";
 
 import Cookies from "js-cookie";
 import jwtDecode from "jwt-decode";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
+
+  const navigate = useNavigate();
+
+  const [userLogin, setUserLogin] = useState(false);
 
   const [userEmail, setUserEmail] = useState("");
   const [userName, setUserName] = useState("");
@@ -50,32 +60,42 @@ const Home = () => {
 
     if (profile.data.length > 1) {
       console.log("error: Não foi possível conectar com a conta!");
-      //realizar LOGOUT
+      setUserLogin(false);
     }
 
     const profileId = profile.data[0].id;
 
     const profileData = await getProfileById(profileId);
     return profileData;
-
   }
 
   useEffect(() => {
     const token = Cookies.get("auth_token");
     if (token) {
+      setUserLogin(true);
       const decodedToken = jwtDecode(token);
       getProfile(decodedToken.email);
+    } else {
+      setUserLogin(false);
     }
   }, []);
 
-  return (
-    <>
+  function backLogin() {
+    navigate('/')
+  }
+
+  const login = (
+    <main>
       <HomeHeader />
       <SearchBar />
 
       <div className={classes.content}>
         <div className={classes.profile}>
-          <ProfilePhoto name={userName} country={userCountry} relationship={userRelationship} />
+          <ProfilePhoto
+            name={userName}
+            country={userCountry}
+            relationship={userRelationship}
+          />
           <EditProfile />
         </div>
 
@@ -94,8 +114,20 @@ const Home = () => {
           <CommunitySection />
         </div>
       </div>
-    </>
+    </main>
   );
+
+  const loginFail = (
+    <div className={classes.loginErrorContainer}>
+      <img src={img_notFound} alt="not_found" className={classes.imgError}/>
+      <div className={classes.loginError}>
+        <p className={classes.pError}>Erro ao realizar acesso!</p>
+        <button className={classes.errorButton} onClick={backLogin} >Voltar para o Login</button>
+      </div>
+    </div>
+  );
+
+  return <>{userLogin === true ? login : loginFail}</>;
 };
 
 export default Home;
