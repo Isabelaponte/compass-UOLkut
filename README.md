@@ -86,7 +86,7 @@ If you are developing a production application, we recommend updating the config
 > - **Card:** The Card component represents a styled container that displays information in a visually appealing format. It may be used to showcase user profiles, community details, or other relevant data.
 > - **Community**: The Community component represents a section or page where users can view and interact with different communities. It may include community names, descriptions, and members.
 > - **Container**: The Container component is a reusable wrapper that provides consistent styling and layout for its child components. It helps to maintain a consistent design throughout the application.
-> - **EditInfos: **The EditInfors component allows users to edit their personal information, such as name, age, location, interests, etc. It provides a form or input fields for users to update their details
+> - **EditInfos:** The EditInfors component allows users to edit their personal information, such as name, age, location, interests, etc. It provides a form or input fields for users to update their details
 > - **EditProfile**: The EditProfile component is a page or section that enables users to modify their profile settings and preferences. It may include options to update profile pictures, privacy settings, and other account-related details.
 > - **Footer**: The Footer component represents the bottom section of a page or application and typically contains copyright information, links to social media, and other relevant content.
 > - **Form**: The Form component is a reusable element used to create input forms for various purposes, such as login forms, registration forms, or search forms.
