@@ -51,8 +51,10 @@ If you are developing a production application, we recommend updating the config
 
 > ### Usage
 >
-> 1. Start the development server with `npm start`.
-> 2. Open your web browser and visit `http://localhost:3000/` to view the application.
+> 1. Start the development server with `npm run dev`.
+> 2. Open your web browser and visit `http://localhost:5173` to view the application.
+> 3. Start the backend server with `npm run backend`.
+> 4. Open yout web browser and visit `http://localhost:3000` to view the db.json.
 
 
 
@@ -71,9 +73,9 @@ If you are developing a production application, we recommend updating the config
 >
 > -[x] **Vite** Vite is used as the build tool and development server, enabling faster development and quick hot module replacement.
 >
-> -[x] **HTML **The application's structure is created using HTML for semantic and accessible markup.
+> -[x] **HTML** The application's structure is created using HTML for semantic and accessible markup.
 >
-> -[x] **CSS **Cascading Style Sheets are used for styling the user interface, providing a visually appealing design.
+> -[x] **CSS** Cascading Style Sheets are used for styling the user interface, providing a visually appealing design.
 >
 > -[x] **Typescript** TypeScript is adopted to bring static typing to the application, enhancing code reliability and maintainability.
 
