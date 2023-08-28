@@ -8,14 +8,8 @@ import React, { useState } from "react";
 import { GoogleAuthProvider, signInWithPopup, User } from "firebase/auth";
 import { auth } from "../../service/firebase";
 
-// import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
-
-
-// import api from "../../service/api";
-
-// import Cookies from "js-cookie";
 
 const Form = (props: Props) => {
   const navigate = useNavigate();
@@ -96,27 +90,9 @@ const Form = (props: Props) => {
     // navigate("/profile");
       signInWithEmailAndPassword(form.email, form.password);
       console.log();
-  };
+    };
 
   const [user, setUser] = useState<User>({} as User);
-
-    // const [email, setEmail] = useState("");
-    // // const [password, setPassword] = useState("");
-    // const [
-    //   createUserWithEmailAndPassword, 
-    //   user, 
-    //   loading, 
-    //   error] 
-    //   = useCreateUserWithEmailAndPassword(auth);
-
-    // function handleSignIn() {
-    //   createUserWithEmailAndPassword(form.email, form.password);
-    // }
-
-    // if (loading) {
-    //   return <p>Carregando...</p>
-    // }
-
 
     if (loading) {
       return <p>Carregando...</p>
