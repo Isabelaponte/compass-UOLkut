@@ -5,13 +5,11 @@ import { useNavigate } from "react-router-dom";
 
 import React, { useEffect, useState } from "react";
 
-import { GoogleAuthProvider, signInWithPopup, User } from "firebase/auth";
 import { auth } from "../../service/firebase";
 
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 import Cookies from "js-cookie";
-// import jwtDecode from "jwt-decode";
 
 const Form = (props: Props) => {
   const navigate = useNavigate();
@@ -22,17 +20,15 @@ const Form = (props: Props) => {
   const [logedIn, setLogedIn ] = useState(false);
   
   if (logedIn) {
-    
     navigate('/profile')
   }
   
   useEffect(() => {
     const token = Cookies.get('auth_token');
     if (token) {
-      // const decodedToken = jwtDecode(token);
       setLogedIn(true);
     }
-    
+
   }, [])
 
 
@@ -121,8 +117,6 @@ const Form = (props: Props) => {
     signInToken();
   };
 
-  const [user, setUser] = useState<User>({} as User);
-
   if (loading) {
     return <p>Carregando...</p>;
   }
@@ -135,26 +129,9 @@ const Form = (props: Props) => {
     console.log(userInfo);
   }
 
-  function handleGoogleSignIn() {
-    const provider = new GoogleAuthProvider();
-
-    signInWithPopup(auth, provider)
-      .then(async (result) => {
-        setUser(result.user);
-        navigate("/profile");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  }
 
   return (
     <>
-      <div>
-        {user.photoURL && <img src={user.photoURL} alt="Foto Usuario" />}
-        <strong>{user.displayName}</strong>
-        <small>{user.email}</small>
-      </div>
       <div className={classes["container-form"]}>
         <div className={classes["brand-form"]}>
           <img src={orkut} className={classes["img-orkut"]} alt="Brand Orkut" />
@@ -217,14 +194,6 @@ const Form = (props: Props) => {
           <div className={classes["flex-button"]}>
             <button className={classes["btn-signin"]}>
               <span className={classes["signin-description"]}>Entrar</span>
-            </button>
-            <button
-              className={classes["btn-signup"]}
-              onClick={handleGoogleSignIn}
-            >
-              <span className={classes["signin-description"]}>
-                Entrar com Google
-              </span>
             </button>
             <button
               className={classes["btn-signup"]}
