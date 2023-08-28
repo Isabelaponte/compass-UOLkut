@@ -3,23 +3,36 @@ import orkut from "../../assets/ps_orkut.svg";
 import { Props } from "../../pages/Login/LoginPage";
 import { useNavigate } from "react-router-dom";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { GoogleAuthProvider, signInWithPopup, User } from "firebase/auth";
 import { auth } from "../../service/firebase";
 
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 
+import Cookies from "js-cookie";
 
 const Form = (props: Props) => {
   const navigate = useNavigate();
+  
+  const [signInWithEmailAndPassword, userInfo, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+    
+  const [logedIn, setLogedIn ] = useState(false);
+  
+  if (logedIn) {
+    
+    navigate('/profile')
+  }
+  
+  useEffect(() => {
+    const token = Cookies.get('auth_token');
+    if (token) {
+      setLogedIn(true);
+    }
 
-  const [
-    signInWithEmailAndPassword,
-    userInfo,
-    loading,
-    error,
-  ] = useSignInWithEmailAndPassword(auth);
+  }, [])
+
 
   const [form, setForm] = useState({
     email: "",
@@ -87,25 +100,38 @@ const Form = (props: Props) => {
       return;
     }
 
-    // navigate("/profile");
-      signInWithEmailAndPassword(form.email, form.password);
-      console.log();
-    };
+    async function signInToken() {
+      const userCredentials = await signInWithEmailAndPassword(
+        form.email,
+        form.password
+      );
+
+      if (userCredentials?.user) {
+        const token = await userCredentials.user.getIdToken();
+        Cookies.set("auth_token", token);        
+      }
+      if (!logedIn) {
+        setLogedIn(true);
+      }
+      navigate('/profile');
+    }
+
+    signInToken();
+  };
 
   const [user, setUser] = useState<User>({} as User);
 
-    if (loading) {
-      return <p>Carregando...</p>
-    }
+  if (loading) {
+    return <p>Carregando...</p>;
+  }
 
-    if (error) {
-      return <p>Error: {error.message}</p>
-    }
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
 
-    if (userInfo) {
-      console.log(userInfo.user)
-    }
-  
+  if (userInfo) {
+    console.log(userInfo);
+  }
 
   function handleGoogleSignIn() {
     const provider = new GoogleAuthProvider();
@@ -113,8 +139,6 @@ const Form = (props: Props) => {
     signInWithPopup(auth, provider)
       .then(async (result) => {
         setUser(result.user);
-        // const token = await result.user.getIdToken();
-        // Cookies.set('token', token);
         navigate("/profile");
       })
       .catch((error) => {
@@ -189,7 +213,7 @@ const Form = (props: Props) => {
             </label>
           </div>
           <div className={classes["flex-button"]}>
-            <button className={classes["btn-signin"]} >
+            <button className={classes["btn-signin"]}>
               <span className={classes["signin-description"]}>Entrar</span>
             </button>
             <button
