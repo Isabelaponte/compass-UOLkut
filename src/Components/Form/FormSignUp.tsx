@@ -11,6 +11,7 @@ export const FormSignUp = (props: Props) => {
   const registerUser = async () => {
     const dataToSend = {
       email: form.email,
+      name: form.name,
       password: form.password,
       birth_date: form.dt_birth,
       profession: form.profession,

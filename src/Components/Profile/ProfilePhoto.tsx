@@ -1,7 +1,13 @@
 import'./ProfilePhoto.module.css'
 import classes from './ProfilePhoto.module.css'
 
-function ProfilePhoto() {
+interface PropsProfilePhoto {
+    name: string,
+    country: string,
+    relationship: string,
+}
+
+function ProfilePhoto(props:PropsProfilePhoto) {
     return (
         <>
             <div className={classes.__divProfile}>
@@ -10,8 +16,8 @@ function ProfilePhoto() {
 
                     </div>
                 </div>
-                <h4>Iuri Silva</h4>
-                <h5>Solteiro, Brasil</h5>
+                <h4>{props.name}</h4>
+                <h5>{props.relationship}, {props.country}</h5>
             </div>
 
 

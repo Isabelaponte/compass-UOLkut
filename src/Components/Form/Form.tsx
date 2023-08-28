@@ -11,6 +11,7 @@ import { auth } from "../../service/firebase";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 import Cookies from "js-cookie";
+// import jwtDecode from "jwt-decode";
 
 const Form = (props: Props) => {
   const navigate = useNavigate();
@@ -28,6 +29,7 @@ const Form = (props: Props) => {
   useEffect(() => {
     const token = Cookies.get('auth_token');
     if (token) {
+      // const decodedToken = jwtDecode(token);
       setLogedIn(true);
     }
 

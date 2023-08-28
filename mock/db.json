@@ -58,6 +58,7 @@
     },
     {
       "email": "jonas@gmail.com",
+      "name": "Jonas",
       "password": "jojo1111",
       "birth_date": "2005-12-12",
       "profession": "Vendedor",
@@ -65,6 +66,19 @@
       "city": "Pindamonhangaba",
       "relationship_status": "Solteiro(a)",
       "id": 6
+    },
+    {
+      "email": "jefinho@email.com",
+      "name": "Jeferson",
+      "password": "Jefinho1234",
+      "birth_date": "1975-05-20",
+      "profession": "Eletricista",
+      "country": "Brasil",
+      "city": "São Paulo",
+      "relationship_status": "Casado(a)",
+      "songs": [],
+      "movies": [],
+      "id": 7
     }
   ]
 }

@@ -5,10 +5,18 @@ import ThumbsUp from '../../assets/images/ThumbsUp.png';
 import Heart from '../../assets/images/Heart.png';
 import { useEffect } from 'react';
 
-
+interface PropsUser {
+    email: string,
+    name: string,
+    birth_date: string,
+    country: string,
+    city: string,
+    relationship: string,
+    profession: string
+}
  
 
-function ProfileDetails() {
+function ProfileDetails(props:PropsUser) {
         
     useEffect(() => {
         const handleResize = () => {
@@ -38,12 +46,19 @@ function ProfileDetails() {
         };
     }, []);
 
+    const birth_date = props.birth_date;
+    const bithDateConvertedToBrasil = birth_date.split('-').reverse().join('/');
+
+    const ano_atual = new Date().getFullYear();
+    const year = parseInt(bithDateConvertedToBrasil.split('/')[2]);
+
+    const age = ano_atual - year;
 
     return (
         <>
             <div className={classes.__divContainer}>
 
-                <h3 className={classes.nameTag}>Boa tarde, Iuri</h3>
+                <h3 className={classes.nameTag}>Boa tarde, {props.name}</h3>
                 <h3 className={classes.inputName}><span className={classes.inputNameContent}>Programar sem café é igual poeta sem poesia.</span></h3>
                 <div className={classes.__divSpans}> 
                     <p className={classes.p}>Fãs</p>
@@ -62,20 +77,19 @@ function ProfileDetails() {
                     <img className={classes.img}src={Heart} alt="Heart" />
                 </div>
                 <div className={classes.__divDetails}>
-                    <h4 className={classes.details}>Relacionamento: <span>Solteiro</span></h4>
-                    <h4 className={classes.details}>Aniversario: <span>21 de julho</span></h4>
-                    <h4 className={classes.details}>Idade: <span>22</span></h4>
-                    <h4 className={classes.details}>Quem sou eu: <span>Programador</span></h4>
-                    <h4 className={classes.details}>Moro: <span>Guarantã</span></h4>
-                    <h4 className={classes.details}>País: <span>Brasil</span></h4>
-                    <h4 className={classes.details}>Cidade natal: <span>São Paulo</span></h4>
+                    <h4 className={classes.details}>Relacionamento: <span>{props.relationship}</span></h4>
+                    <h4 className={classes.details}>Aniversario: <span>{bithDateConvertedToBrasil}</span></h4>
+                    <h4 className={classes.details}>Idade: <span>{age}</span></h4>
+                    <h4 className={classes.details}>Quem sou eu: <span>{props.profession}</span></h4>
+                    <h4 className={classes.details}>Moro: <span>{props.city}</span></h4>
+                    <h4 className={classes.details}>País: <span>{props.country}</span></h4>
                 </div>
                 <div className={classes.__divPreferences}>
                     <h4 className={classes.h}>
-                        Músicas: <span className={classes.word}>Trap</span> <span className={classes.word}>Rap</span> <span className={classes.word}>Indie</span> <span className={classes.verTodos}>Ver Todos</span>
+                        Músicas: <span className={classes.word}></span> <span className={classes.word}></span> <span className={classes.word}></span> <span className={classes.verTodos}>Ver Todos</span>
                     </h4>
                     <h4 className={classes.h}>
-                        Filmes: <span className={classes.word}>A rede social</span> <span className={classes.word}>Meu amigo totoro</span> <span className={classes.verTodos}>Ver Todos</span>
+                        Filmes: <span className={classes.word}></span> <span className={classes.word}></span> <span className={classes.verTodos}>Ver Todos</span>
                     </h4>
                 </div>
 
